@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>0</h1>
+	<button class="btn">停止</button>
+	<script>
+		var h1 =document.querySelector('h1')
+		var  n=0;
+		function count(){
+			n++;
+			h1.innerHTML = n;
+		}
+		var t=setInterval(count,500)
+		document.querySelector('.btn').onclick=function(){
+			clearInterval(t)
+
+		}
+
+		// document.querySelector('.btn').onmouseenter=function(){
+		// 	clearInterval(t)
+		// 	setInterval(count,500)
+		// }
+
+		// document.querySelector('.btn').onmouseleave=function(){
+		// 	clearInterval(t)
+		// 	setInterval(count,500)
+		// }
+
+		// document.querySelector('.btn').onmousemove=function(){
+		// 	clearInterval(t)
+		// 	// setInterval(count,500)
+			
+		// }
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li{
+			width:100px;
+			height:30px;
+			list-style: none;
+			text-align: center;
+			border: 1px solid blue;
+			cursor: pointer;
+			float: left;
+
+		}
+		img{
+			width: 500px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<img src="猫猫.jpg" alt="">
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script>
+		var oImg = document.querySelector('img');
+		var oLi = document.querySelectorAll('li');
+		var picSrc=[
+		
+		"猫猫.jpg" ,
+		"狗狗.jpg" ,
+		"菊花.jpg" ,
+		"帅.jpg" ,
+		"兔子.jpg" 
+		];
+		for(var i=0;i<oLi.length;i++){
+			oLi[i].index=i;
+			oLi[i].onclick = function(){
+				oImg.src= picSrc[this.index]
+			}
+		}
+		var ind=1;
+		function changes(){
+			ind++;
+			oImg.src=picSrc[ind]
+			ind= ind===5 ? 0 : ind
+		}
+		var t=setInterval(changes,2000)
+		document.querySelector('ul').onmouseenter=function(){
+			clearInterval(t)
+		}
+		document.querySelector('ul').onmouleave=function(){
+			t=setInterval(changes,2000)
+		}
+
+	</script>
+</body>
+</html>
